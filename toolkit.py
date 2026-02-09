@@ -7,7 +7,7 @@ import bcrypt
 
 class DevToolkit:
     def __init__(self):
-        self.lorem_words = "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor".split()
+        self.lorem_words = "Lorem Ipsum is a standard placeholder text used in typesetting, graphic design, and web development to focus on layout and design rather than content.".split()
 
     def password_generate(self, length=12):
         chars = string.ascii_letters + string.digits + string.punctuation
@@ -25,7 +25,7 @@ class DevToolkit:
         except Exception:
             print("Error: Invalid input for Base64")
 
-    def get_lorem(self, count=20):
+    def get_lorem(self, count=24):
         return ' '.join(random.choice(self.lorem_words) for i in range(count))
 
 
@@ -34,11 +34,11 @@ class CLI:
         self.tool = DevToolkit()
 
     def run(self):
-        print("1. Password Gen | 2. Bcrypt | 3. Base64 Encode | 4. Base64 Decode | 5. Lorem | 6. Exit")
-
-        choice = input("\nAction: ")
 
         while True:
+            print(
+                "1. Password Gen | 2. Bcrypt | 3. Base64 Encode | 4. Base64 Decode | 5. Lorem | 6. Exit")
+            choice = input("\nAction: ")
             try:
                 if choice == '1':
                     size = int(input("Length (Default 12): ") or 12)
