@@ -29,29 +29,50 @@
 # print(s1.get_data())
 
 # Encapsulation
-class Bank:
-    def __init__(self, name, amount):
-        self.name = name
-        self.amount = amount
+# class Bank:
+#     def __init__(self, name, amount):
+#         self.name = name
+#         self.amount = amount
 
-    def credit(self, bal):
-        self.amount += bal
-        print("Credited")
+#     def credit(self, bal):
+#         self.amount += bal
+#         print("Credited")
 
-    def debit(self, bal):
-        self.amount -= bal
-        print("Debited")
+#     def debit(self, bal):
+#         self.amount -= bal
+#         print("Debited")
 
-    def balance(self):
-        print(self.amount)
-        
-    @staticmethod
-    def sttc():
-        print(5+5)
+#     def balance(self):
+#         print(self.amount)
+
+#     @staticmethod
+#     def sttc():
+#         print(5+5)
 
 
-customer1 = Bank("Md Raza", 500)
-customer1.credit(200)
-customer1.debit(200)
-customer1.balance()
-customer1.sttc()
+# customer1 = Bank("Md Raza", 500)
+# customer1.credit(200)
+# customer1.debit(200)
+# customer1.balance()
+# customer1.sttc()
+
+
+# def sum_of_numbers(*agrs):
+#     return sum(agrs)
+
+
+# def user_info(**kwargs):
+#     for key, value in kwargs.items():
+#         print(f"{key}: {value}")
+
+
+# print(sum_of_numbers(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+# user_info(Name="Md Raza", Age=20, Role="Web Developer")
+
+# squares = [x**2 for x in range(1, 11)]
+# print(squares)
+
+# square = lambda x : x * x
+
+
+# print(square(5))
