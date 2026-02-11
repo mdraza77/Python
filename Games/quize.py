@@ -16,7 +16,6 @@ class QuizEngine:
             if data['response_code'] == 0:
                 result = data['results'][0]
 
-                # Sawal aur sahi jawab nikalna
                 question = html.unescape(result['question'])
                 correct_ans = html.unescape(result['correct_answer'])
                 incorrect_ans = [html.unescape(ans)
