@@ -3,6 +3,8 @@ import hashlib
 import string
 import base64
 import bcrypt
+import argparse
+import os
 
 
 class DevToolkit:
@@ -13,7 +15,7 @@ class DevToolkit:
         chars = string.ascii_letters + string.digits + string.punctuation
         return ''.join(random.choice(chars) for i in range(length))
 
-    def bcrypt_hash(self, text):
+    def hash_password(self, text):
         salt = bcrypt.gensalt()
         bcrypt.hashpw(text.encode(), salt).decode()
 
@@ -27,6 +29,10 @@ class DevToolkit:
 
     def get_lorem(self, count=24):
         return ' '.join(random.choice(self.lorem_words) for i in range(count))
+
+
+class FileManager:
+    pass
 
 
 class CLI:
@@ -45,7 +51,7 @@ class CLI:
                     print(f"Password: {self.tool.password_generate(size)}")
                 elif choice == '2':
                     text = input("Enter the Text to Hash: ")
-                    print(f"{self.tool.bcrypt_hash(text)}")
+                    print(f"{self.tool.hash_password(text)}")
                 elif choice == '3':
                     value = input("Enter the Text to Encode: ")
                     print(f"{self.tool.base64_handle(value, 'encode')}")
